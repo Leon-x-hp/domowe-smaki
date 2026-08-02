@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domowe Smaki Giełda | Tradycyjne Obiady w Drzonku</title>
+    <meta name="description" content="Prawdziwe domowe obiady w Drzonku k. Śremu. Najlepszy rosół i schabowy w regionie. Ocena 4.9/5!">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Playfair Display for headers, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#164e63', // Deep Teal/Green
+                        accent: '#d97706',  // Amber/Gold
+                        warm: '#fdfaf6',    // Creamy Background
+                        dark: '#1c1917',    // Stone Dark
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .menu-card:hover img {
+            transform: scale(1.05);
+        }
+        .sticky-header {
+            transition: all 0.3s ease;
+        }
+        .sticky-header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-warm text-dark font-sans">
+
+    <!-- NAVIGATION -->
+    <header id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 px-6 md:px-12">
+        <nav class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="bg-accent p-1.5 rounded-lg">
+                    <i data-lucide="utensils-crossbones" class="text-white w-6 h-6"></i>
+                </div>
+                <span class="font-serif text-xl md:text-2xl font-bold tracking-tight text-white transition-colors duration-300 logo-text">
+                    Domowe Smaki <span class="text-accent">Giełda</span>
+                </span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 font-medium">
+                <a href="#o-nas" class="text-white hover:text-accent transition-colors nav-link">O nas</a>
+                <a href="#menu" class="text-white hover:text-accent transition-colors nav-link">Menu</a>
+                <a href="#opinie" class="text-white hover:text-accent transition-colors nav-link">Opinie</a>
+                <a href="#kontakt" class="text-white hover:text-accent transition-colors nav-link">Kontakt</a>
+                <a href="tel:605143607" class="bg-accent hover:bg-amber-600 text-white px-5 py-2.5 rounded-full flex items-center gap-2 transition-all transform hover:scale-105 shadow-lg">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    605 143 607
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-white" id="menu-btn" aria-label="Otwórz menu">
+                <i data-lucide="menu" class="w-8 h-8" id="menu-icon"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t flex flex-col p-6 gap-4 text-lg font-semibold">
+            <a href="#o-nas" class="text-dark hover:text-accent py-2 border-b border-gray-100">O nas</a>
+            <a href="#menu" class="text-dark hover:text-accent py-2 border-b border-gray-100">Menu</a>
+            <a href="#opinie" class="text-dark hover:text-accent py-2 border-b border-gray-100">Opinie</a>
+            <a href="#kontakt" class="text-dark hover:text-accent py-2 border-b border-gray-100">Kontakt</a>
+            <a href="tel:605143607" class="bg-accent text-white px-6 py-4 rounded-xl flex justify-center items-center gap-3 mt-4">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+                Zadzwoń i zamów
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center justify-center text-center px-6 pt-20">
+        <div class="max-w-4xl">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-white mb-6 animate-bounce">
+                <span class="text-yellow-400 flex">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </span>
+                <span class="text-sm font-semibold">4.9/5 (300+ opinii w Google)</span>
+            </div>
+            <h1 class="font-serif text-5xl md:text-7xl text-white mb-6 leading-tight">Prawdziwe domowe smaki <br> w sercu Drzonka</h1>
+            <p class="text-xl text-stone-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Odkryj kuchnię, w której czas płynie wolniej, a porcje przypominają te u Mamy. 
+                Świeże składniki, tradycyjne receptury i pasja od ponad 2 lat.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#menu" class="bg-accent hover:bg-amber-600 text-white px-10 py-4 rounded-full text-lg font-bold transition-all shadow-xl">
+                    Zobacz nasze Menu
+                </a>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=ul.+Klonowa+4,+63-140+Drzonek" target="_blank" class="bg-white hover:bg-gray-100 text-dark px-10 py-4 rounded-full text-lg font-bold transition-all shadow-xl">
+                    Jak dojechać?
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="o-nas" class="py-24 px-6 md:px-12 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <img src="images/restauracja.jpg" alt="Nasza restauracja" class="rounded-2xl shadow-2xl relative z-10">
+                    <div class="absolute -bottom-6 -right-6 bg-accent p-8 rounded-2xl text-white hidden md:block z-20">
+                        <p class="text-2xl font-serif font-bold">ponad 2 lata</p>
+                        <p class="text-sm opacity-90">Tradycji i wyróżnień</p>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="font-serif text-4xl md:text-5xl mb-6 text-primary leading-tight">Dlaczego nasi goście do nas wracają?</h2>
+                    <p class="text-lg text-stone-600 mb-8 leading-relaxed">
+                        Naszą misją jest serwowanie autentycznej, polskiej kuchni bez dróg na skróty. Od 2 lat gościmy mieszkańców Drzonka, Śremu i okolic, zdobywając serca ogromnymi porcjami i domową atmosferą.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex items-start gap-4">
+                            <div class="text-accent bg-amber-50 p-3 rounded-lg"><i data-lucide="baby" class="w-6 h-6"></i></div>
+                            <div>
+                                <h3 class="font-bold">Kącik dla dzieci</h3>
+                                <p class="text-sm text-stone-500">Zabawki wewnątrz i ogródek na zewnątrz.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="text-accent bg-amber-50 p-3 rounded-lg"><i data-lucide="accessibility" class="w-6 h-6"></i></div>
+                            <div>
+                                <h3 class="font-bold">Bez barier</h3>
+                                <p class="text-sm text-stone-500">Miejsce przyjazne dla wózków i niepełnosprawnych.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="text-accent bg-amber-50 p-3 rounded-lg"><i data-lucide="shopping-bag" class="w-6 h-6"></i></div>
+                            <div>
+                                <h3 class="font-bold">Na wynos</h3>
+                                <p class="text-sm text-stone-500">Odbiór na miejscu lub przed lokalem.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="text-accent bg-amber-50 p-3 rounded-lg"><i data-lucide="award" class="w-6 h-6"></i></div>
+                            <div>
+                                <h3 class="font-bold">Najlepsza jakość</h3>
+                                <p class="text-sm text-stone-500">Świeże produkty i wielkie porcje w cenie 20–40 zł.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU HIGHLIGHTS -->
+    <section id="menu" class="py-24 px-6 md:px-12 bg-stone-50">
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <h2 class="font-serif text-4xl md:text-5xl mb-4 text-primary">Specjały Naszej Kuchni</h2>
+            <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
+            <p class="text-stone-500 max-w-xl mx-auto">Przygotowane według tradycyjnych receptur. To dania, o których nasi goście piszą w setkach pozytywnych opinii.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <!-- Danie 1 - Rosół -->
+            <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-lg border border-stone-100 group transition-all duration-300">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="images/rosol.jpg" alt="Domowy Rosół" class="w-full h-full object-cover transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Hit Opinii</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Domowy Rosół</h3>
+                    <p class="text-stone-500 text-sm mb-4">Z ręcznie robionym makaronem, dokładnie taki jak u babci.</p>
+                    <p class="text-accent font-bold text-lg hover:underline"><a href="tel:605143607">Specjał Domu →</a></p>
+                </div>
+            </div>
+
+            <!-- Danie 2 - Schabowy -->
+            <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-lg border border-stone-100 group transition-all duration-300">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="images/schabowy.jpg" alt="Kotlet Schabowy" class="w-full h-full object-cover transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Duża Porcja</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Kotlet Schabowy</h3>
+                    <p class="text-stone-500 text-sm mb-4">Chrupiący, złocisty schabowy podawany z dodatkami do wyboru.</p>
+                    <p class="text-accent font-bold text-lg hover:underline"><a href="tel:605143607">Klasyka →</a></p>
+                </div>
+            </div>
+
+            <!-- Danie 3 - Rolada Wieprzowa -->
+            <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-lg border border-stone-100 group transition-all duration-300">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="images/rolada.jpg" alt="Rolada Wieprzowa" class="w-full h-full object-cover transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Polecane</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Rolada Wieprzowa</h3>
+                    <p class="text-stone-500 text-sm mb-4">Tradycyjna rolada wieprzowa z kluskami śląskimi i sosem.</p>
+                    <p class="text-accent font-bold text-lg hover:underline"><a href="tel:605143607">Regionalne →</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-16">
+            <p class="text-stone-600 italic">Ceny wszystkich obiadów mieszczą się w przedziale 20–40 zł za osobę.</p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="opinie" class="py-24 px-6 md:px-12 bg-primary text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 p-20 opacity-10 pointer-events-none">
+            <i data-lucide="quote" class="w-64 h-64"></i>
+        </div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
+                <div>
+                    <h2 class="font-serif text-4xl md:text-5xl mb-4">Głos naszych Gości</h2>
+                    <p class="text-emerald-100 text-lg">Nie wierz nam na słowo – sprawdź opinie w Google Maps!</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center">
+                    <div class="text-3xl font-bold text-accent mb-1">4.9 / 5</div>
+                    <div class="text-xs uppercase tracking-widest opacity-70">Ponad 300 recenzji</div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
+                    <div class="text-yellow-400 flex mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="italic text-lg mb-6 leading-relaxed">"Najlepszy rosół jaki jadłem w restauracji! Porcje tak duże, że ciężko dojeść do końca, a cena bardzo przystępna. Na pewno wrócimy z rodziną."</p>
+                    <p class="font-bold">— Marek K.</p>
+                </div>
+                <div class="bg-white/5 p-8 rounded-3xl border border-white/10 md:scale-105 shadow-2xl z-20">
+                    <div class="text-yellow-400 flex mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="italic text-lg mb-6 leading-relaxed">"Rewelacyjna rolada wieprzowa! Lokal bardzo czysty, miła obsługa i świetny kącik zabaw dla dzieci. To idealne miejsce na niedzielny obiad."</p>
+                    <p class="font-bold">— Anna Nowak</p>
+                </div>
+                <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
+                    <div class="text-yellow-400 flex mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="italic text-lg mb-6 leading-relaxed">"Jedzenie świeże, podane błyskawicznie. Widać, że gotują z pasją. Schabowy na cały talerz! Polecam każdemu, kto przejeżdża przez Drzonek."</p>
+                    <p class="font-bold">— Tomasz W.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & HOURS -->
+    <section id="kontakt" class="py-24 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Info -->
+                <div>
+                    <h2 class="font-serif text-4xl mb-8 text-primary uppercase tracking-tight">Godziny Otwarcia</h2>
+                    <div class="space-y-4 mb-12">
+                        <div class="flex justify-between items-center pb-3 border-b border-stone-200">
+                            <span class="font-semibold">Poniedziałek</span>
+                            <span>12:00 – 20:00</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-stone-200 text-primary font-bold">
+                            <span>Wtorek – Piątek</span>
+                            <span>10:00 – 20:00</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-stone-200">
+                            <span class="font-semibold">Sobota – Niedziela</span>
+                            <span class="bg-amber-100 text-accent px-4 py-1 rounded-full font-bold">11:00 – 20:00</span>
+                        </div>
+                    </div>
+
+                    <h2 class="font-serif text-4xl mb-8 text-primary">Znajdź nas</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-primary text-white p-3 rounded-full"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
+                            <div>
+                                <p class="text-stone-500 text-sm uppercase">Adres:</p>
+                                <p class="text-lg font-bold">ul. Klonowa 4, 63-140 Drzonek</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="bg-primary text-white p-3 rounded-full"><i data-lucide="phone" class="w-6 h-6"></i></div>
+                            <div>
+                                <p class="text-stone-500 text-sm uppercase">Rezerwacje i zamówienia:</p>
+                                <a href="tel:605143607" class="text-2xl font-bold text-accent hover:underline">605 143 607</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=ul.+Klonowa+4,+63-140+Drzonek" target="_blank" class="inline-flex items-center gap-3 bg-stone-800 text-white px-8 py-4 rounded-xl hover:bg-black transition-colors w-full justify-center md:w-auto">
+                            <i data-lucide="navigation" class="w-5 h-5"></i>
+                            Wyznacz trasę w Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Simple Contact Card / Placeholder for Map -->
+                <div class="bg-stone-200 rounded-3xl min-h-[400px] relative overflow-hidden flex items-center justify-center group">
+                    <img src="images/lokalizacja.jpg" alt="Lokalizacja" class="absolute inset-0 w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-700">
+                    <div class="relative z-10 bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-2xl max-w-sm text-center">
+                        <i data-lucide="info" class="w-10 h-10 text-accent mx-auto mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Pyszne jedzenie czeka!</h3>
+                        <p class="text-stone-600 mb-4">Znajdujemy się w dogodnej lokalizacji w Drzonku, blisko Śremu. Łatwy dojazd i duży parking dla gości.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div>
+                <div class="flex items-center gap-2 mb-2">
+                    <i data-lucide="utensils-crossbones" class="text-accent w-5 h-5"></i>
+                    <span class="font-serif text-xl font-bold">Domowe Smaki <span class="text-accent">Giełda</span></span>
+                </div>
+                <p class="text-stone-500 text-sm">© 2026 Wszystkie prawa zastrzeżone.</p>
+            </div>
+            
+            <div class="flex gap-6">
+                <a href="#" class="text-stone-400 hover:text-white transition-colors" aria-label="Facebook"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                <a href="#" class="text-stone-400 hover:text-white transition-colors" aria-label="Instagram"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+            </div>
+            
+            <div class="text-center md:text-right">
+                <p class="font-bold">Zadzwoń do nas:</p>
+                <a href="tel:605143607" class="text-accent text-xl">605 143 607</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Sticky Header Effect
+        const header = document.getElementById('navbar');
+        const logoText = document.querySelector('.logo-text');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const menuIcon = document.getElementById('menu-icon');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+                logoText.classList.remove('text-white');
+                logoText.classList.add('text-primary');
+                navLinks.forEach(link => {
+                    link.classList.remove('text-white');
+                    link.classList.add('text-stone-700');
+                });
+                menuIcon.classList.remove('text-white');
+                menuIcon.classList.add('text-primary');
+            } else {
+                header.classList.remove('scrolled');
+                logoText.classList.add('text-white');
+                logoText.classList.remove('text-primary');
+                navLinks.forEach(link => {
+                    link.classList.add('text-white');
+                    link.classList.remove('text-stone-700');
+                });
+                menuIcon.classList.add('text-white');
+                menuIcon.classList.remove('text-primary');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth Scroll for links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                if(href === '#') return;
+                const target = document.querySelector(href);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
